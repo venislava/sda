@@ -21,30 +21,10 @@ void Reallocate(DA* arr, int newSize)
 {
 	int* Temp = new int[newSize];
 	for (int i = 0; i < arr->used; i++)
-	{void Reallocate(DA* arr, int newSize)
-{
-	int* Temp = new int[newSize];
-		for (int i = 0; i < arr->used; i++)
-		{
-			Temp[i] = arr->data[i];
-	}
-		delete[]arr->data;
-		arr->data = Temp;
-		arr->size = newSize;
-}
+	{
 		Temp[i] = arr->data[i];
 	}
-	delete[]arr->data;void Reallocate(DA* arr, int newSize)
-{
-	int* Temp = new int[newSize];
-		for (int i = 0; i < arr->used; i++)
-		{
-			Temp[i] = arr->data[i];
-	}
-		delete[]arr->data;
-		arr->data = Temp;
-		arr->size = newSize;
-}
+	delete[]arr->data;
 	arr->data = Temp;
 	arr->size = newSize;
 }
@@ -56,8 +36,8 @@ void Add(DA* arr, int element)
 		int newSize = (arr->size == 0) ? 2 : arr->size * 2;
 		Reallocate(arr, newSize);
 	}
-	
-	
+	arr->data[arr->used] = element;
+	arr->used++;
 	
 }
 void Free(DA* arr)
@@ -78,7 +58,7 @@ void Free(DA* arr)
 	 for (int i = 0; i < 100; i++)
 	 {
 		 Add(&da, i);
-		 cout << da.size;
+		 cout << da.size << endl;
 	 }
 	 return 0;
     
