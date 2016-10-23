@@ -63,4 +63,93 @@ void Free(DA* arr)
 	 return 0;
     
 }
+/*
+#include "stdafx.h"
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+template <class T>
+struct DA
+{
+	T *data;
+	int used;
+	int size;
+
+};
+template <class T>
+void Init(DA <T> * arr)
+{
+	arr->data = NULL;
+	arr->used = 0;
+	arr->size = 0;
+
+}
+template <class T>
+void Reallocate(DA<T>* arr, int newSize)
+{
+	T* Temp = new T[newSize];
+	for (int i = 0; i < arr->used; i++)
+	{
+		Temp[i] = arr->data[i];
+	}
+	delete[]arr->data;
+	arr->data = Temp;
+	arr->size = newSize;
+}
+template <class T>
+void Add(DA<T>* arr, T element)
+{
+
+	if (arr->size <= arr->used)
+	{
+		int newSize = (arr->size == 0) ? 2 : arr->size * 2;
+		Reallocate(arr, newSize);
+	}
+	arr->data[arr->used] = element;
+	arr->used++;
+
+}
+template <class T>
+void Free(DA<T>* arr)
+{
+	arr->size = 0;
+	arr->used = 0;
+	delete[] arr->data;
+	arr->data = NULL;
+
+}
+template <class T>
+int GetUsed(DA<T> * arr)
+{
+	return arr->used;
+}
+
+int main()
+{
+	/*DA da;
+	Init(&da);
+	Add(&da, 5);
+	Free(&da);
+	for (int i = 0; i < 100; i++)
+	{
+		Add(&da, i);
+		cout << da.size << endl;
+	}*/
+	DA <double> da;
+	double x;
+	int n;
+	Init(&da);
+	while (cin>>x && x!=0)
+	{
+		Add(& da, x);
+	}
+	n = GetUsed(&da);
+	cout << n;
+	Free(&da);
+
+	return 0;
+
+}
+*/
 
